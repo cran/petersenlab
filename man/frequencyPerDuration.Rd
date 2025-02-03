@@ -37,10 +37,7 @@ computeLifetimeFrequencies(
 specified interval, \code{interval}.}
 
 \item{interval}{The specified interval corresponding to the number of times
-the behavior occurred \code{num_occurrences}.}
-
-\item{duration}{The desired duration during which to estimate how many times
-the behavior occurred:
+the behavior occurred, \code{num_occurrences}. One of:
 \itemize{
   \item \code{1} = average number of times per day
   \item \code{2} = average number of times per week
@@ -48,11 +45,22 @@ the behavior occurred:
   \item \code{4} = number of times in the past year
 }}
 
+\item{duration}{The desired duration during which to estimate how many times
+the behavior occurred:
+\itemize{
+  \item "day" = average number of times per day
+  \item "week" = average number of times per week
+  \item "month" = number of times in the past month
+  \item "year" = number of times in the past year
+}}
+
 \item{not_occurred_past_year}{Whether or not the behavior did NOT occur in
-the past year. If \code{yes}, the behavior did not occur in the past year.}
+the past year. If \code{0}, the behavior did occur in the past year. If
+\code{1}, the behavior did not occur in the past year.}
 
 \item{never_occurred}{Whether or not the behavior has NEVER occurred in
-the person's lifetime. If \code{yes}, the behavior has never occurred in the
+the person's lifetime. If \code{0}, the behavior has occurred in the
+person's lifetime. If \code{1}, the behavior has never occurred in the
 person's lifetime.}
 
 \item{item_names}{The names of the questionnaire items.}

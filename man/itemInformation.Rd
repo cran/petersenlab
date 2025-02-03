@@ -38,9 +38,11 @@ itemInformation(b = 2, a = 1.5, c = 0.10, d = 0.95, theta = -4:4) #4PL
 \doi{10.1177/0146621613475471}
 
 Other IRT: 
+\code{\link{deriv_d_negBinom}()},
 \code{\link{discriminationToFactorLoading}()},
 \code{\link{fourPL}()},
 \code{\link{reliabilityIRT}()},
-\code{\link{standardErrorIRT}()}
+\code{\link{standardErrorIRT}()},
+\code{\link{test_info_4PL}()}
 }
 \concept{IRT}

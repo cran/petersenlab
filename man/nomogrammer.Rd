@@ -10,8 +10,10 @@ nomogrammer(
   FP = NULL,
   FN = NULL,
   pretestProb = NULL,
+  selectionRate = NULL,
   SN = NULL,
   SP = NULL,
+  FPR = NULL,
   PLR = NULL,
   NLR = NULL,
   Detail = FALSE,
@@ -32,10 +34,16 @@ nomogrammer(
 \item{pretestProb}{Pretest probability (prevalence/base rate/prior
 probability) of characteristic, as a number between 0 and 1.}
 
+\item{selectionRate}{Selection rate (marginal probability of positive test),
+as a number between 0 and 1.}
+
 \item{SN}{Sensitivity of the test at a given cut point, as a number
 between 0 and 1.}
 
 \item{SP}{Specificity of the test at a given cut point, as a number
+between 0 and 1.}
+
+\item{FPR}{False positive rate of the test at a given cut point, as a number
 between 0 and 1.}
 
 \item{PLR}{Positive likelihood ratio of the test at a given cut point.}
@@ -64,7 +72,11 @@ Create nomogram plot from the following at a given cut point:
   and false negatives (FN)
   \item 2) pretest probability (pretestProb), sensitivity (SN), and
   specificity (SP), OR
-  \item 3) pretest probability (pretestProb), positive likelihood ratio
+  \item 3) pretest probability (pretestProb), sensitivity (SN), and
+  false positive rate (FPR), OR
+  \item 4) pretest probability (pretestProb), sensitivity (SN), and
+  selection rate (selectionRate), OR
+  \item 5) pretest probability (pretestProb), positive likelihood ratio
   (PLR), and negative likelihood ratio (NLR)
 }
 }
@@ -83,6 +95,16 @@ nomogrammer(
 
 nomogrammer(
   pretestProb = .60,
+  SN = 0.421,
+  FPR = 0.035)
+
+nomogrammer(
+  pretestProb = .60,
+  SN = 0.421,
+  selectionRate = 0.267)
+
+nomogrammer(
+  pretestProb = .60,
   PLR = 12,
   NLR = 0.6)
 
@@ -94,6 +116,7 @@ Other accuracy:
 \code{\link{accuracyAtCutoff}()},
 \code{\link{accuracyAtEachCutoff}()},
 \code{\link{accuracyOverall}()},
-\code{\link{optimalCutoff}()}
+\code{\link{optimalCutoff}()},
+\code{\link{posttestOdds}()}
 }
 \concept{accuracy}
